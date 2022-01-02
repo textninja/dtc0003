@@ -1,0 +1,16 @@
+{
+  "name": "mdhost",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Serve markdown files with no extra formatting",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joe Taylor <joe@textninja.net>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2",
+    "marked": "^4.0.8"
+  }
+}
