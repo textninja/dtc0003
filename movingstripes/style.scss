@@ -1,0 +1,28 @@
+:root {
+  --col2: 1fr;
+  --col4: 1fr;
+}
+
+html, body {
+  margin: 0; padding: 0;
+  width: 100%; 
+  height: 100%;
+}
+
+body {
+  width: 100%; height: 100%;
+  display: grid;
+  grid-template-columns: 1fr var(--col2) 1fr var(--col4) 1fr;
+  grid-template-rows: repeat(5, 1fr);
+}
+
+@for $x from 1 through 5 {
+
+  $random-color: hsl(50+random(180), 20%+random(50), 30%+random(70));
+
+  @for $y from 0 through 4 {
+    body > div:nth-of-type(#{$y*5+$x}) {
+      background-color: lighten($random_color, $y*5%);
+    }
+  }
+}
