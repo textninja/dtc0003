@@ -4,7 +4,7 @@ Serves up markdown files from the current directory.
 
 ## Usage
 
-`mdserve`, in the directory you want to serve markdown files from.
+`mdserve`, in the directory you want to serve markdown files.
 
 ## Description and disclaimer
 
