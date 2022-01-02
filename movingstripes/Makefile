@@ -1,4 +1,4 @@
-.PHONY: image image.push local
+.PHONY: image image.push container
 
 image:
 	docker build -t textninja/movingstripes .
@@ -6,5 +6,5 @@ image:
 image.push:
 	docker push textninja/movingstripes
 
-local:
-	docker run --rm -p8000:80 -v $PWD:/usr/local/apache2/htdocs textninja/movingstripes
+container:
+	docker run --rm -p8000:80 textninja/movingstripes
