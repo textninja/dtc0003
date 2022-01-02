@@ -61,7 +61,6 @@ Object.assign(
     }
 );
 
-
 gsap.ticker.add(render);
 function render(time) {
     cube.rotateY(Math.PI / 360);
