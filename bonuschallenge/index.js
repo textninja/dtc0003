@@ -11,8 +11,14 @@ app.use(async (req, res, next) => {
 
     try {
         let markdown = await fs.readFile(mdPath, "utf8");
+
+        // strip frontmatter
+        if (markdown.startsWith("---")) {
+            markdown = markdown.replace(/---\n([\s\S]*?)---\n/, "");
+        }
+        
         let html = await marked.parse(markdown);
-        res.end(html);
+        res.end("<!doctype html>\n" + html);
     } catch (e) {
         next();
     }
@@ -40,8 +46,8 @@ async function markdownPath(pth) {
     return false;
 }
 
-app.use(express.static(process.cwd()));
 
+app.use(express.static(process.cwd()));
 app.listen(3000, () => {
     console.log("Serving markdown on port 3000");
-})
+});
