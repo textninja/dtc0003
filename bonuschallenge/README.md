@@ -8,7 +8,7 @@ Serves up markdown files from the current directory.
 
 ## Description and disclaimer
 
-This is pretty much a normal express static server, except that whenever it
+This is pretty much a normal expressjs static server, except that whenever it
 encounters Markdown files it tries to convert them to plain HTML.
 
 **It is intended for local development of markdown files you wrote or trust, and
